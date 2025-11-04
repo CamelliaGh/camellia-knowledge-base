@@ -1,71 +1,74 @@
+# 🔧 Prompt Templates for Developers
 
-# 📋 Reusable Prompt Templates for Developers
-
-This file contains reusable prompt templates for use with coding AI tools like Cursor, Claude Code, and GitHub Copilot. Replace placeholders in brackets (e.g., `[LANGUAGE]`, `[FEATURE_NAME]`) before sending to the AI.
-
----
-
-## 1) Feature Implementation Prompt
-
-```
-Role: You are a senior software engineer at a SaaS company, working in the [PROJECT_NAME] codebase.
-Task: Implement the new feature "[FEATURE_NAME]" in [LANGUAGE]. The feature should [DESCRIPTION_OF_FUNCTIONALITY].
-Context: Codebase uses [ARCHITECTURE, e.g., monorepo, CI/CD with GitHub Actions], and coding standards: [STYLE_GUIDE, e.g., ESLint, Prettier]. Tests use [TEST_FRAMEWORK]. Coverage target ≥ 80%.
-Output: Provide updated/added source files + unit tests. Include comments for major changes.
-Constraints: Do not modify unrelated files. Do not change public API signatures without approval. Include docstrings for public functions. File size < 200 lines.
-```
+This document contains reusable **prompt templates** for tasks like refactoring code, writing tests, planning features, and generating documentation. These templates are designed to help developers get more consistent and high-quality results from AI tools like ChatGPT, Claude, or Cursor.
 
 ---
 
-## 2) Code Review Prompt
+## 📌 About This Folder
+
+There are **two versions** of the prompt template library in this repository:
+
+| File | Purpose |
+|------|---------|
+| `prompt-templates.md` _(you’re reading this)_ | Human-friendly Markdown version for browsing, copying, and learning |
+| `prompt-templates.mdc` | Cursor **Rule file** version, designed to load inside the AI context of tools like Cursor and Claude Code |
+
+If you want to **use these templates directly inside Cursor**, open or move the `.mdc` file into:
 
 ```
-Role: You are a senior code reviewer.
-Task: Review the following code and provide:
-1) A brief summary of what it does.
-2) Issues found (performance, security, readability, maintainability).
-3) Recommended refactor actions (with example code blocks).
-4) Suggested tests to cover missing edge cases.
-Code:
-```[PASTE CODE HERE]```
-Constraints: Output with numbered sections. Do not add external dependencies.
+.your-project/.cursor/rules/prompt-templates.mdc
 ```
+
+Then, activate it inside Cursor via the **Command Palette → Toggle AI Rules**.
 
 ---
 
-## 3) Bug Fix Prompt
+## 📚 Template Library
+
+> 💡 _Tip: Use `Cmd+F` or search in the sidebar to find templates by task (feature planning, testing, debugging, etc.)._
+
+### 🧱 General Structure Template
 
 ```
-Role: You are a debugging specialist.
-Task: Diagnose and fix the issue based on this error stack. Then write the updated code and tests to confirm the fix.
-Error: "[PASTE ERROR MESSAGE]"
-Context: Codebase runs on [ENVIRONMENT], using [LANGUAGE], [TECH STACK].
-Steps:
-1) Explain probable root cause.
-2) Provide updated code (minimal changes).
-3) Write regression test.
-Constraints: Maintain existing code style. Avoid magic values. Do not change unrelated files.
+Role: [who the model should act as]
+Task: [what to do]
+Context: [background if needed]
+Constraints: [word limits, tone, format, etc.]
+Output Format: [list, table, code, etc.]
 ```
 
 ---
 
-## 4) Documentation Prompt
+### ⚡ Refactor Code
 
 ```
-Role: You are a technical writer experienced in [LANGUAGE] codebases.
-Task: Create or update the documentation for the module “[MODULE_NAME]”.
-Context: Module handles [FUNCTIONALITY]. Current README is outdated.
-Deliverables:
-- Overview of module
-- Sample usage code snippet
-- Config/setup instructions
-- Troubleshooting tips
-- API reference (function params, return values)
-Constraints: Markdown only. No more than 120 words per section.
+Role: Senior JavaScript Engineer
+Task: Refactor the following function to improve readability and performance.
+Context: ES6+, no external dependencies.
+Constraints: Keep functionality identical. Improve naming. Add JSDoc comments.
+Output Format: Updated code only.
 ```
 
 ---
 
-## 🔄 Usage Tip
+## 🔗 Cursor Version (for Tooling Integration)
 
-Store this file in your project as `prompt-templates.md` and reuse prompts for features, debug sessions, and code reviews. Or convert them into `.mdc` rule format for use in Cursor under `.cursor/rules/`.
+For developers using Cursor or Claude Code, the structured rule version of this file is available at:
+
+📄 `/.cursor/rules/prompt-templates.mdc`
+
+This version includes metadata like `manual: true` and `alwaysApply: false`, so it doesn’t auto-inject — but it’s available any time you need these templates in your coding session.
+
+---
+
+## 🛠 Contributing
+
+Want to add your own prompt templates or improve existing ones?
+
+1. Fork the repo
+2. Add or edit prompts in **both** versions (Markdown & `.mdc`)
+3. Submit a pull request!
+
+---
+
+_Last updated: `2025-02-17`_

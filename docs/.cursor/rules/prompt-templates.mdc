@@ -1,0 +1,27 @@
+name: Prompt Templates Library
+description: >
+  A collection of reusable prompt templates for AI-assisted coding, task planning,
+  documentation, and more. Load this rule inside Cursor to access templates
+  without leaving your coding environment.
+alwaysApply: false
+manual: true
+
+---
+
+# Prompt Templates
+
+## General Structure
+Role: [who the model should act as]
+Task: [what to do]
+Context: [background if needed]
+Constraints: [word limits, tone, format, etc.]
+Output Format: [list, table, code, etc.]
+
+## Refactor Code
+Role: Senior JavaScript Engineer
+Task: Refactor the following function to improve readability and performance.
+Context: ES6+, no external dependencies.
+Constraints: Keep functionality identical. Improve naming. Add JSDoc comments.
+Output Format: Updated code only.
+
+# (more templates can be added here)

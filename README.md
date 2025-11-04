@@ -11,9 +11,9 @@ This repo is organized into themed folders under `/docs/`:
 
 | Category               | What You'll Find                                                             |
 |------------------------|------------------------------------------------------------------------------|
-| Prompt Engineering     | Frameworks, examples, coding prompts, templates                             |
-| Product Management     | Backlog methods, tools, courses, frameworks                                 |
-| Technical Skills       | Debugging, VS Code, SQL tips                                                |
-| Projects & Practicals  | Real examples from tools I've built (like VocaFrame, Cursor, and more)      |
+| [Prompt Engineering](./docs/prompt-engineering/)     | Frameworks, examples, coding prompts, templates                             |
+| [Product Management](./docs/product-management/)     | Backlog methods, tools, courses, frameworks                                 |
+| [Technical Skills](./docs/technical-skills/)       | Debugging, VS Code, SQL tips                                                |
+| [Projects & Practicals](./docs/projects-and-practicals/)  | Real examples from tools I've built (like VocaFrame, Cursor, and more)      |
 
 Feel free to browse, fork, and reuse any of the content here.
