@@ -1,27 +1,55 @@
 name: Prompt Templates Library
-description: >
-  A collection of reusable prompt templates for AI-assisted coding, task planning,
-  documentation, and more. Load this rule inside Cursor to access templates
-  without leaving your coding environment.
+description: Reusable prompt templates for Cursor/Claude Code workflows.
+priority: 0
 alwaysApply: false
+auto: false
 manual: true
+---
+
+# Prompt Templates (Rules Context)
+
+The content below is included in the AI context when this rule is enabled. Copy a template, replace placeholders, and run it against the relevant files.
 
 ---
 
-# Prompt Templates
+## Template 1 — Feature Implementation
+Role: You are a senior software engineer at a SaaS company, working in the [PROJECT_NAME] codebase.
+Task: Implement the feature "[FEATURE_NAME]" in [LANGUAGE]. It should [DESCRIPTION_OF_FUNCTIONALITY].
+Context: [ARCHITECTURE_DETAILS]. Style: [STYLE_GUIDE]. Tests: [TEST_FRAMEWORK], coverage ≥ 80%.
+Output: Only the updated/added source file(s) + unit tests. Include comments for major changes.
+Constraints: No unrelated file changes; avoid new deps; keep files < 200 lines; include JSDoc (or equivalent).
 
-## General Structure
-Role: [who the model should act as]
-Task: [what to do]
-Context: [background if needed]
-Constraints: [word limits, tone, format, etc.]
-Output Format: [list, table, code, etc.]
+---
 
-## Refactor Code
-Role: Senior JavaScript Engineer
-Task: Refactor the following function to improve readability and performance.
-Context: ES6+, no external dependencies.
-Constraints: Keep functionality identical. Improve naming. Add JSDoc comments.
-Output Format: Updated code only.
+## Template 2 — Code Review + Refactor
+Role: World‑class software architect and reviewer (15+ yrs).
+Task: Review code (in [LANGUAGE]) and provide: (1) summary, (2) issues, (3) refactors with example code, (4) missing tests.
+Code: ```[INSERT CODE SNIPPET]```
+Output: Numbered sections; inline refactor code. Respect project style; avoid new deps.
 
-# (more templates can be added here)
+---
+
+## Template 3 — Debugging / Error Fix
+Role: Senior engineer specialising in debugging.
+Task: Diagnose and fix the issue. Provide corrected code + explanation.
+Context: Environment [ENV_DETAILS]; Error: "[ERROR_LOG]".
+Steps: (1) Root cause → (2) Updated code with comments → (3) Tests to verify + prevent regression.
+Constraints: All tests must pass; keep style; avoid breaking public APIs.
+
+---
+
+## Template 4 — Architecture / Specification
+Role: Technical PM / Software Architect.
+Task: Write spec for "[SUBSYSTEM_NAME]" integrating with our codebase.
+Context: Tech stack [TECH_STACK]; scale [USERS], load [LOAD], requirements [REQUIREMENTS].
+Deliverables: overview, ASCII diagram, APIs, dependencies, NFRs, MVP + next iteration.
+Constraints: Markdown headings; ≤ 150 words per section; measurable requirements.
+
+---
+
+## Template 5 — Documentation / Onboarding
+Role: Technical writer.
+Task: Create/update docs for "[MODULE_NAME]".
+Context: Handles [FUNCTIONALITY]; README outdated.
+Deliverables: overview, usage examples, configuration, troubleshooting, API reference (names, descriptions, params, returns).
+Constraints: Markdown; concise plain English; runnable snippets.
