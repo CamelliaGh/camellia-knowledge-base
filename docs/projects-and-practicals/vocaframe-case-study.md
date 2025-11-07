@@ -1,3 +1,0 @@
-# VocaFrame Case Study
-
-Content coming soon...

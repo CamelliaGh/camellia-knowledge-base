@@ -1,3 +1,0 @@
-# Cursor Automations and Rules
-
-Content coming soon...

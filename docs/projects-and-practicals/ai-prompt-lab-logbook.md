@@ -1,3 +1,0 @@
-# AI Prompt Lab Logbook
-
-Content coming soon...
