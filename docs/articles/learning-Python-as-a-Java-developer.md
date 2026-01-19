@@ -154,9 +154,9 @@ This leads to concise, readable code—but it can surprise Java developers at fi
 
 ---
 
-### Loops: Iteration Over Indices vs Objects
+### Loops: Iteration Over Elements
 
-In Java, loops often rely on indices:
+In Java, you can iterate with indices:
 
 ```java
 for (int i = 0; i < items.size(); i++) {
@@ -164,12 +164,22 @@ for (int i = 0; i < items.size(); i++) {
 }
 ```
 
-In Python, iteration is typically done directly over elements:
+Or use enhanced for loops (available since Java 5):
+
+```java
+for (Item item : items) {
+    process(item);
+}
+```
+
+Python makes iteration over elements the default and most natural approach:
 
 ```python
 for item in items:
     process(item)
 ```
+
+Notice how Python's syntax is cleaner—no type declaration needed, and `in` reads naturally.
 
 You can still access indices when needed:
 
@@ -178,7 +188,7 @@ for index, item in enumerate(items):
     print(index, item)
 ```
 
-> **Tip:** If you find yourself reaching for `range(len(...))`, pause and ask whether iterating over the objects directly would be clearer.
+> **Tip:** If you find yourself reaching for `range(len(...))`, pause and ask whether iterating over the objects directly would be clearer. Python's `enumerate()` is often what you need when you need both index and value.
 
 ---
 
@@ -815,8 +825,8 @@ from .models import User
 
 ### Virtual Environments: Isolating Dependencies
 
-In Java, tools like Maven or Gradle manage dependencies per project.
-In Python, this role is handled by virtual environments.
+In Java, tools like Maven or Gradle manage dependencies and isolate them per project.
+In Python, virtual environments provide similar isolation for packages and dependencies.
 
 Create one:
 
