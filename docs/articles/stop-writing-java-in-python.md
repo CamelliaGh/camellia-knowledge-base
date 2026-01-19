@@ -118,8 +118,12 @@ A more Pythonic version separates data from behavior:
 from dataclasses import dataclass
 
 @dataclass
+class Item:
+    price: float
+
+@dataclass
 class Order:
-    items: list
+    items: list[Item]
 
 def calculate_total(order: Order) -> float:
     return sum(item.price for item in order.items)
