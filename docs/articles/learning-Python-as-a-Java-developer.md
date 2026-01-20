@@ -1,3 +1,10 @@
+---
+title: "Learning Python as a Java Developer"
+author: "Camellia G."
+date: 2026-01-19
+description: "A hands-on guide for Java developers transitioning to Python, focused on idiomatic code and practical examples."
+---
+
 # Learning Python as a Java Developer: Syntax, Idioms, and Common Pitfalls
 
 ## Prerequisites

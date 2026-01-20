@@ -1,3 +1,9 @@
+---
+title: "Stop Writing Java in Python"
+description: "A guide for Java developers learning to write Pythonic code by unlearning Java habits and embracing Python's module-based, function-first approach."
+date: 2026-01-20
+---
+
 # Stop Writing Java in Python: How to Think Pythonically as a Java Developer
 
 ## Prerequisites
